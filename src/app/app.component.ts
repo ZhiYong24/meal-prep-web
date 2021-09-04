@@ -8,38 +8,21 @@ import { MealPrep, WebServiceService } from './services/web-service.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-  title = 'meal-prep-web';
   mealPrep: MealPrep[] = [];
+  date: string = "2021-09-01";
 
   constructor(private webService: WebServiceService) {}
 
-  // showMealPrep(){
-  //   this.webService.getMealPrep()
-  //     .subscribe(
-  //       (data: MealPrep) => this.mealPrep = {
-  //         id: data.id,
-  //         meal: data.meal,
-  //         containerType: data.containerType, 
-  //         protein: data.protein,
-  //         proteinQuantity: data.proteinQuantity,
-  //         veggies: data.veggies,
-  //         veggiesQuantity: data.veggiesQuantity,
-  //         carb: data.carb,
-  //         carbQuantity: data.carbQuantity,
-  //         date: data.date,
-  //        }
-  //     );
-  // }
-
-  showMealPrep2(){
-    this.webService.getMealPrep()
+  loadMealPrep(){
+    this.webService.getMealPrep(this.date)
       .subscribe(
         (data: MealPrep[]) => {
           this.mealPrep = data;
-          console.log(data);
-          console.log(this.mealPrep);
-          this.mealPrep.forEach(x => console.log(x.carb));
         }
       );
+  }
+
+  insertMealPrep(){
+    this.webService.addMealPrep(new MealPrep());
   }
 }
