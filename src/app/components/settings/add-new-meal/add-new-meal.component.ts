@@ -19,20 +19,28 @@ export class AddNewMealComponent implements OnInit{
   }
 
   onSubmit(form: NgForm){
-    if (form && form.valid){
+    if (form && form.valid && this.isValid()){
       this.submitted = true;
       this.webservice.addMeal(this.meal);
-      console.log(this.meal);
     }
   }
 
-  resetForm(form: NgForm){
+  isValid(): boolean{
+    if (!this.meal.protein?.trim() && !this.meal.carbs?.trim() && !this.meal.veggies?.trim()){
+      alert("A meal must contain at least one protein, carbs or veggies.");
+      return false;
+    }
+    
+    return true;
+}
+
+  resetForm(form?: NgForm){
     this.meal.mealName = '';
     this.meal.protein = '';
     this.meal.carbs = '';
     this.meal.veggies = '';
     this.meal.remark = '';
     this.submitted = false;
-    form.form.markAsPristine();
+    form?.form.markAsPristine();
   }
 }

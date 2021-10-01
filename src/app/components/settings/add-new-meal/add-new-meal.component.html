@@ -4,7 +4,7 @@
         <h2>Add New Meal</h2>
     </div>
 
-    <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+    <form *ngIf="!submitted" (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
         <table class="form-table">
             <tr>
                 <td class="label-cell">
@@ -68,10 +68,16 @@
         </table>
 
         <div class="button-class">
-            <button class="submit-button" type="submit" 
+            <button class="button green" type="submit" 
             [disabled]="!userForm.form.valid || submitted">Add</button>
-            <button class="reset-button" mat-raised-button color="primary" 
+            <button class="button red"
             (click)="resetForm(userForm)">Clear form</button>
         </div>
     </form>
+
+    <div *ngIf="submitted">
+        <p>Successfully added new meal: {{meal | json}}</p>
+        <button class="button grey"
+        (click)="resetForm()">Back</button>
+    </div>
 </div>
