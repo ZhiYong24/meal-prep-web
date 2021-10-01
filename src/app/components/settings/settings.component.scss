@@ -1,0 +1,75 @@
+.grid-container {
+    margin: 10px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.settings-card {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: rgb(240, 240, 240);
+}
+
+.settings-card-content {
+    overflow: hidden;
+    height: 100%;
+}
+
+.card-header-title-button-settings {
+    width:30px;
+    background-color: inherit;
+    border-style: none;
+    position: absolute;
+    color: aliceblue;
+    right:5px;
+}
+
+.card-header-title-tab {
+    width: 500px;
+    float: left;
+}
+
+.card-header-title-button {
+    width:100px;
+    float: right;
+}
+
+.sidenav-left-pane{
+    background-color: transparent;
+    padding-right:20px;
+}
+
+.item-font {
+    font-size: 1em;
+    border-radius: 25px;
+    background-color: transparent;
+    padding: 0px 0px;
+    margin: 10px 10px 10px 0px;
+}
+
+.item-font:hover{
+    background-color: #bbbdc0;
+}
+
+.item-font:focus{
+    background-color: #bbbdc0;
+}
+
+.mat-nav-list a.active {
+    background: #bbbdc0;
+}
+
+.sidenav-container {
+    font-size: 1em;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+}

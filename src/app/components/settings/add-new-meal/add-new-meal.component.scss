@@ -1,0 +1,209 @@
+.wrapper {
+    padding: 10px 10px 200px 50px;
+    margin-left: 20px;
+    font-size: 9pt;
+    overflow: auto;
+    background-color: transparent;
+}
+
+.title {
+    display: table;
+    margin-bottom: 40px;
+}
+
+.title img {
+    display: table-cell;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.title h2 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+.form-table {
+    width: 80%;
+    max-width: 900px;
+    min-width: 500px;
+}
+
+.form-table tr {
+    padding: 20px 0px;
+}
+
+.label-cell {
+    display: inline;
+    vertical-align: top;
+}
+
+.form-table label{
+    width: 80%;
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+.form-table input,textarea{
+    width: 90%;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    // border-color: #676767;
+    padding: 8px;
+    color: black;
+}
+
+.checkbox {
+    display: grid;
+    grid-template: 1fr 1fr / repeat(2, 2fr);
+}
+
+.spacer{
+    height: 20px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border: 2px solid green; 
+}
+  
+.ng-invalid:not(form)  {
+    border: 2px solid #ce2f2c; 
+}
+
+.alert-danger {
+    width: 90%;
+    height: 35px;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.submit-button{
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-bottom: .5rem !important;
+    width: 200px;
+    height: 35px;
+    background-color: green;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    transition: box-shadow .4s cubic-bezier(.25, .8, .25, 1), transform .4s cubic-bezier(.25, .8, .25, 1);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26)
+}
+
+.submit-button:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1.5s
+}
+
+.submit-button:active:before{
+    transform: scale(0, 0);
+    opacity: .1;
+    transition: 0s
+}
+
+.submit-button:not([disabled]):active,
+.submit-button:not([disabled]):focus,
+.submit-button:not([disabled]):hover {
+    box-shadow: 0 4px 8px 0 rgba(247, 245, 245, 0.4);
+    transform: translate3d(0, -1px, 0)
+}
+
+.submit-button[disabled] {
+    color: rgb(202, 199, 199);
+    background-color: transparent;
+}
+
+.reset-button{
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-bottom: .5rem !important;
+    width: 200px;
+    height: 35px;
+    background-color: rgb(243, 40, 40);
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    transition: box-shadow .4s cubic-bezier(.25, .8, .25, 1), transform .4s cubic-bezier(.25, .8, .25, 1);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26)
+}
+
+.reset-button:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1.5s
+}
+
+.reset-button:active:before{
+    transform: scale(0, 0);
+    opacity: .1;
+    transition: 0s
+}
+
+.reset-button:not([disabled]):active,
+.reset-button:not([disabled]):focus,
+.reset-button:not([disabled]):hover {
+    box-shadow: 0 4px 8px 0 rgba(247, 245, 245, 0.4);
+    transform: translate3d(0, -1px, 0)
+}
+
+.reset-button[disabled] {
+    color: rgb(202, 199, 199);
+    background-color: transparent;
+}
+
+.reset-button.mat-button.mat-primary .mat-button-focus-overlay,
+.reset-button.mat-button.mat-accent .mat-button-focus-overlay,
+.reset-button.mat-button.mat-warn .mat-button-focus-overlay
+{
+  background-color: green;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    // opacity: 0.03 !important;
+    background-color: #ffe680!important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #ffe680;
+}

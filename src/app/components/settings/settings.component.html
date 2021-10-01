@@ -1,0 +1,44 @@
+<div class="grid-container">
+    <mat-grid-list cols="1" rowHeight="100vh">
+
+        <!-- Market Data (Quote list & Market Depth) -->
+        <mat-grid-tile [colspan]="(cards | async)?.mainCard?.cols" [rowspan]="(cards | async)?.mainCard?.rows">
+          <mat-card class="settings-card">
+            <!-- <mat-card-header>
+              <mat-card-title class="card-header-title">
+                <div class="card-header-title-tab">
+                  <span class="card-header-title-span">Admin Tool</span>        
+                </div>
+                <div class="card-header-title-button">
+                  <button class="card-header-title-button-settings"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  <button class="card-header-title-button"><i class="fa fa-lock" aria-hidden="true"></i></button>
+                </div>
+              </mat-card-title>
+            </mat-card-header> -->
+    
+            <mat-card-content class="settings-card-content">
+                <mat-drawer-container class="sidenav-container">
+                    <mat-drawer #sidenav mode="side" opened class="sidenav-left-pane">
+                      <mat-nav-list>
+                  
+                        <a class="item-font" mat-list-item [routerLink]="'add-new-meal'">
+                            <!-- <i class="fa fa-plus" aria-hidden="true" style="padding-right: 10px;"></i> -->
+                            <img src="assets/cooking-icon.png" alt="meal-name">
+                            Add new meal
+                        </a>
+                        
+                      </mat-nav-list>
+                    </mat-drawer>
+            
+                    <mat-drawer-content>
+                        <div class="sidenav-content">
+                            <router-outlet></router-outlet>
+                        </div>   
+                    </mat-drawer-content>
+                </mat-drawer-container>           
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
