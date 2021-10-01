@@ -76,6 +76,7 @@
     </form>
 
     <div *ngIf="submitted">
+        <img class="success-icon" src="assets/success-icon.png" alt="meal-name">
         <p>Successfully added new meal: {{meal | json}}</p>
         <button class="button grey"
         (click)="resetForm()">Back</button>
