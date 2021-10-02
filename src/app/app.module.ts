@@ -20,6 +20,11 @@ import { AddNewMealComponent } from './components/settings/add-new-meal/add-new-
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WebService } from './services/web-service.service';
+import { ManageMealComponent } from './components/settings/manage-meal/manage-meal.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,8 @@ import { WebService } from './services/web-service.service';
     NavComponent,
     HomeComponent,
     SettingsComponent,
-    AddNewMealComponent
+    AddNewMealComponent,
+    ManageMealComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,11 @@ import { WebService } from './services/web-service.service';
     MatSidenavModule,
     MatListModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatTableModule,
+    MatSortModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [WebService],
   bootstrap: [AppComponent]

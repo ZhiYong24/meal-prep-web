@@ -27,7 +27,13 @@ export class WebService {
       );
   }
 
-  addMeal(meal: Meal){
+  getMeal(): Observable<Meal[]>{
+    return this.http.get<Meal[]>(
+      baseUrl + "meal"
+    );
+  }
+
+  addMeal(meal: Meal): void{
     this.http
       .post(baseUrl + "meal", meal)
       .subscribe(
