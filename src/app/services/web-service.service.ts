@@ -41,4 +41,20 @@ export class WebService {
         (error) => console.log(error)
       );
   }
+
+  editMeal(mealName: string, meal: Meal): Observable<unknown>{
+    let param = new HttpParams().set('mealName', mealName);
+    let options = {params: param, responseType: "text" as const};
+
+    return this.http
+      .post(baseUrl + "meal/replace", meal, options);
+  }
+
+  deleteMeal(mealName: string): Observable<string>{
+    let param = new HttpParams().set('mealName', mealName);
+    let options = {params: param, responseType: "text" as const};
+
+    return this.http.delete(baseUrl + "meal", options);
+  }
+
 }

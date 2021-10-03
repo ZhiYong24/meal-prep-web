@@ -1,0 +1,79 @@
+<div class="wrapper">
+    <div class="title">
+        <img src="assets/cooking-icon.png" alt="meal-name">
+        <h2>Edit Meal</h2>
+    </div>
+
+    <form #userForm="ngForm">
+        <table class="form-table">
+            <tr>
+                <td class="label-cell">
+                    <img src="assets/meal-name.png" alt="meal-name">
+                    <label for="mealName">Meal Name </label>
+                </td>
+                <td>
+                    <input id="mealName" type="text" 
+                     [(ngModel)]="meal.mealName" name="mealName" #mealNameModel="ngModel" required>
+
+                    <div class="alert alert-danger" [hidden]="mealNameModel.valid || mealNameModel.pristine">
+                        Meal Name is required
+                    </div>
+                </td>
+            </tr> 
+            <tr class="spacer"></tr>
+            <tr>
+                <td class="label-cell">
+                    <img src="assets/protein-icon.png" alt="meal-name">
+                    <label for="protein">Protein </label>
+                </td>
+                <td>
+                    <input id="protein" type="text" 
+                    [(ngModel)]="meal.protein" name="protein" #proteinModel="ngModel">
+                </td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td class="label-cell">
+                    <img src="assets/carbs-icon.png" alt="meal-name">
+                    <label for="carbs">carbs </label>
+                </td>
+                <td>
+                    <input id="carbs" type="text"
+                    [(ngModel)]="meal.carbs" name="carbs" #carbsModel="ngModel">
+                </td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td class="label-cell">
+                    <img src="assets/veggies-icon.png" alt="meal-name">
+                    <label for="veggies">Veggies </label>
+                </td>
+                <td>
+                    <input id="veggies" type="text"
+                    [(ngModel)]="meal.veggies" name="veggies" #veggiesModel="ngModel">
+                </td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td class="label-cell">
+                    <img src="assets/remark-icon.jpg" alt="meal-name">
+                    <label for="remark">Remark </label>
+                </td>
+                <td>
+                    <textarea id="remark" type="text" placeholder="Extra spicy..."
+                    [(ngModel)]="meal.remark" name="remark" #remarkModel="ngModel">
+                    </textarea>
+                </td>
+            </tr>
+        </table>
+
+        <div class="button-class">
+            <button class="button green" 
+            [disabled]="!userForm.form.valid" 
+            [mat-dialog-close]="meal">Confirm</button>
+
+            <button class="button red"
+            (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>
